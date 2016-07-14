@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Beaver Builder Dynamic Template Switchboard
- * Plugin URI: https://www.wpbeaverbuilder.com/custom-module-documentation/
+ * Plugin URI: https://github.com/simbasounds/Dynamic-Template-Switchboard-for-Beaver-Builder-and-Dynamik
  * Description: Custom Beaver Builder module used for inserting WordPress template (eg. single.php, archive.php) dynamic content into Beaver Builder layout templates.
  * Version: 1.0
  * Author: Simon Barnett
