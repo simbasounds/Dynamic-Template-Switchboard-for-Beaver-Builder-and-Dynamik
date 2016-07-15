@@ -26,13 +26,31 @@ WordPress template files are manually created or modified to:
 
 ---
 ##Instructions
-<ol>
-<li>Install the plugin (requires Beaver Builder).</li>
-<li>Create a Beaver Builder template.</li>
-<li>Use the **Dynamic Template Switchboard** module (in Advanced Modules) where you want your content to appear.</li>
-<li>[Find](https://www.competethemes.com/blog/find-page-id/), and take note of the ID of the Beaver Builder template.</li>
-<li>Modify your WordPress template files, or create one using the [example template Gist for Dynamik](https://gist.github.com/simbasounds/4fdff6f2cb47529a15c962fb9a977c9c), or the [generic WordPress barebones version](https://gist.github.com/simbasounds/63b616a0ba229c0bcea4b403f9bf3b6d). In short, the template's loop should be attached to the `fl_dynamic_switchboard` hook.</li>
-<li>In your template, use the Beaver Builder layout template ID as indicated in the example Gist.</li>
-</ol>
-<script src="https://gist.github.com/simbasounds/4fdff6f2cb47529a15c962fb9a977c9c.js"></script>
+1. Install the plugin (requires Beaver Builder).
+2. Create a Beaver Builder template.
+3. Use the **Dynamic Template Switchboard** module (in Advanced Modules) where you want your content to appear.
+4. [Find](https://www.competethemes.com/blog/find-page-id), and take note of the ID of the Beaver Builder template.
+5. Modify your WordPress template files, or create one using the [example template Gist for Dynamik](https://gist.github.com/simbasounds/4fdff6f2cb47529a15c962fb9a977c9c), or the [generic WordPress barebones version](https://gist.github.com/simbasounds/63b616a0ba229c0bcea4b403f9bf3b6d). In short, the template's loop should be attached to the `fl_dynamic_switchboard` hook.</li>
+6. In your template, use the Beaver Builder layout template ID as indicated in the example Gist.
+
+```php
+<?php
+
+add_action('fl_dynamic_switchboard', 'my_template_code');
+function my_template_code() {
+	/* Your template loop code here */
+}
+
+add_action('fldts_fl_template','fldts_get_fl_template');
+function fldts_get_fl_template() {
+	FLBuilder::render_query( array(
+		'post_type' => 'fl-builder-template',
+		'p'         => 1234 /* Your BB Template ID here */
+	) );
+}
+
+get_header();
+do_action( 'fldts_fl_template' );
+get_footer();
+```
 
