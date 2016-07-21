@@ -67,6 +67,7 @@ Shortcodes from other plugins.
 
 ---
 ##Other Solutions
++ [Thierry Pigot (GitHub profile link)](https://github.com/thierrypigot) has an upcoming solution that [sounds super-promising](https://beaverbrains.com/brainy-hacks/custom-post-type-templates-in-beaver-builder/).
 + [Beaver Tunnels](https://beavertunnels.com/docs/), a premium plugin, appears to offer a solution by providing hooks for Beaver Builder module templates in WordPress page templates.
 + The Beaver Builder team have themselves (as at 18 July 2016) [announced a Theme Template Builder](https://www.wpbeaverbuilder.com/its-heating-up-july-update/), which may make this Switchboard experiment redundant. So it goes.
 
